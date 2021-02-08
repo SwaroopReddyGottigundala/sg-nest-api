@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { QuestModule } from './quest/quest.module';
 import { UserModule } from './user/user.module';
 import { LocationModule } from './location/location.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [QuestModule, UserModule, LocationModule],
+  imports: [TypeOrmModule.forFeature(),QuestModule, UserModule, LocationModule],
   controllers: [AppController],
   providers: [AppService],
 })
